@@ -2968,7 +2968,7 @@ const crisisData = {
                     <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Version & Updates</h3>
                     <p style="color: #f8fafc; line-height: 1.6; margin: 0;">
                         Current Version: 1.0 (July 2026)<br>
-                        Last updated: July 8, 2026
+                        Last updated: July 9, 2026
                     </p>
                 </div>
 
@@ -3619,7 +3619,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     adrIv: { label: 'Adrenaline IV (1-10mcg/kg, Max 100mcg)', unit: 'mcg' },
                     dexaBronch: { label: 'Dexamethasone IV (0.6mg/kg)', unit: 'mg' },
                     mgso4: { label: 'Magnesium Sulfate IV (50mg/kg, Max 2.47g)', unit: '' },
-                    aminophylline: { label: 'Aminophylline IV (10mg/kg, Max 500mg)', unit: 'mg' }
+                    aminophylline: { label: 'Aminophylline IV (10mg/kg, Max 500mg)', unit: 'mg' },
+                    amiodarone: { label: 'Amiodarone - Arrest (5mg/kg, Max 300mg)', unit: 'mg' },
+                    lignocaine: { label: 'Lignocaine - Arrest (1mg/kg, Max 100mg)', unit: 'mg' },
+                    fluidBolus: { label: 'Fluid Bolus - Resus (20ml/kg)', unit: 'ml' },
+                    dextrose10: { label: 'Dextrose 10% - Resus (2ml/kg)', unit: 'ml' },
+                    sodiumBicarb: { label: 'Sodium Bicarbonate 8.4% - Arrest (1ml/kg)', unit: 'ml' }
                 };
 
                 function runCalc() {
@@ -3698,7 +3703,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         { title: 'Bradycardia', keys: ['atropine'] },
                         { title: 'Bronchospasm', keys: ['salbMdi', 'ipraMdi', 'salbIv', 'adrIv', 'dexaBronch', 'mgso4', 'aminophylline'] },
                         { title: 'Anaphylaxis', keys: ['anaphModIm', 'anaphModIv', 'anaphLife'] },
-                        { title: 'Cardiac Arrest', keys: ['adrArrest', 'adrArrestMl', 'dccs'] },
+                        { title: 'Cardiac Arrest', keys: ['adrArrest', 'adrArrestMl', 'amiodarone', 'lignocaine', 'dccs'] },
+                        { title: 'Resuscitation / Fluids', keys: ['fluidBolus', 'dextrose10', 'sodiumBicarb'] },
                         { title: 'Seizure', keys: ['seizure'] },
                         { title: 'Antiemetics', keys: ['ondansetron', 'dexamethasone', 'droperidol'] },
                         { title: 'Antibiotics', keys: ['cefazolin'] }
@@ -3774,6 +3780,16 @@ document.addEventListener('DOMContentLoaded', () => {
                                 value = `${mgVal} mg (${gVal} g)`;
                             } else if (key === 'aminophylline') {
                                 value = Math.min(Math.round(w * 10), 500);
+                            } else if (key === 'amiodarone') {
+                                value = Math.min(parseFloat((w * 5).toFixed(1)), 300);
+                            } else if (key === 'lignocaine') {
+                                value = Math.min(parseFloat((w * 1).toFixed(1)), 100);
+                            } else if (key === 'fluidBolus') {
+                                value = Math.round(w * 20);
+                            } else if (key === 'dextrose10') {
+                                value = Math.round(w * 2);
+                            } else if (key === 'sodiumBicarb') {
+                                value = Math.round(w * 1);
                             } else {
                                 value = data[key];
                             }
