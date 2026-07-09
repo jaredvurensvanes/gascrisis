@@ -1,4 +1,4 @@
-function getClinicalParams(inputWeight) {
+﻿function getClinicalParams(inputWeight) {
     const weights = Object.keys(CLINICAL_DATA).map(Number);
     // Find weight closest to input
     const closestWeight = weights.reduce((prev, curr) =>
@@ -249,7 +249,7 @@ const crisisData = {
                     <li>SALBUTAMOL MDI &lt;6YRS: 6 PUFFS (600mcg) | &gt;6YRS: 12 PUFFS (1200mcg)</li>
                     <li>IPRATROPIUM BROMIDE MDI &lt;6YRS: 4 PUFFS (84mcg) | &gt;6YRS: 8 PUFFS (168mcg)</li>
                     <li>SALBUTAMOL IV 10 MCG/KG (MAX 300 MCG) OVER 10/60</li>
-                    <li>ADRENALINE IV 1-10 MCG/KG IV BOLUS (MAX 100MCG)</li>
+                    <li>ADRENALINE IV 0.1-1 MCG/KG IV BOLUS (MAX 100MCG)</li>
                     <li>DEXAMETHASONE 0.6MG/KG IV</li>
                     <li>MAGNESIUM SULFATE 50MG/KG IV MAX 2.47MG (10MMOL) OVER 10-20/60</li>
                     <li>AMINOPHYLINE 10MG/KG IV (MAX 500MG) OVER 30/60</li>
@@ -3484,11 +3484,10 @@ const crisisData = {
     }
 };
 
-// helper: keep the dashboard lists in alphabetical order, unless data-no-sort is set
 function sortCrisisLists() {
     document.querySelectorAll('.crisis-list').forEach(ul => {
         if (ul.getAttribute('data-no-sort') === 'true') {
-            return; // Skip sorting for this specific list
+            return;
         }
         const items = Array.from(ul.querySelectorAll('li'));
         items.sort((a, b) =>
@@ -3499,10 +3498,8 @@ function sortCrisisLists() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ensure the tiles are sorted every time the index renders
     sortCrisisLists();
 
-    // --- Global Disclaimer Logic for Both Pages ---
     const disclaimerModal = document.getElementById('disclaimer-modal');
     const agreeBtn = document.getElementById('agree-btn');
 
@@ -3511,7 +3508,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             hasAgreed = !!localStorage.getItem('gascrisis_agreed');
         } catch (e) {
-            console.warn('localStorage is not accessible (likely due to file:// protocol in Chrome). Defaulting to not agreed.');
+            hasAgreed = false;
         }
 
         if (!hasAgreed) {
@@ -3525,7 +3522,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 localStorage.setItem('gascrisis_agreed', 'true');
             } catch (e) {
-                console.warn('Could not save to localStorage.', e);
+                // Ignore storage errors and proceed.
             }
             disclaimerModal.classList.remove('show');
             setTimeout(() => {
@@ -3534,10 +3531,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Index Page Logic ---
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('index') || window.location.pathname.endsWith('index/')) {
-
-        // Search Functionality
         const searchInput = document.getElementById('crisis-search');
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
@@ -3616,15 +3610,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     salbMdi: { label: 'Salbutamol MDI', unit: '' },
                     ipraMdi: { label: 'Ipratropium Bromide MDI', unit: '' },
                     salbIv: { label: 'Salbutamol IV (10mcg/kg, Max 300mcg)', unit: 'mcg' },
-                    adrIv: { label: 'Adrenaline IV (1-10mcg/kg, Max 100mcg)', unit: 'mcg' },
+                    adrIv: { label: 'Adrenaline IV (0.1-1mcg/kg, Max 100mcg)', unit: 'mcg' },
                     dexaBronch: { label: 'Dexamethasone IV (0.6mg/kg)', unit: 'mg' },
                     mgso4: { label: 'Magnesium Sulfate IV (50mg/kg, Max 2.47g)', unit: '' },
                     aminophylline: { label: 'Aminophylline IV (10mg/kg, Max 500mg)', unit: 'mg' },
                     amiodarone: { label: 'Amiodarone - Arrest (5mg/kg, Max 300mg)', unit: 'mg' },
                     lignocaine: { label: 'Lignocaine - Arrest (1mg/kg, Max 100mg)', unit: 'mg' },
-                    fluidBolus: { label: 'Fluid Bolus - Resus (20ml/kg)', unit: 'ml' },
-                    dextrose10: { label: 'Dextrose 10% - Resus (2ml/kg)', unit: 'ml' },
-                    sodiumBicarb: { label: 'Sodium Bicarbonate 8.4% - Arrest (1ml/kg)', unit: 'ml' }
+                    fluidBolus: { label: 'Fluid Bolus - Resus (10-20ml/kg)', unit: 'ml' },
+                    dextrose10: { label: 'Dextrose 10% - Resus (2ml/kg)', unit: 'ml' }
                 };
 
                 function runCalc() {
@@ -3704,7 +3697,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         { title: 'Bronchospasm', keys: ['salbMdi', 'ipraMdi', 'salbIv', 'adrIv', 'dexaBronch', 'mgso4', 'aminophylline'] },
                         { title: 'Anaphylaxis', keys: ['anaphModIm', 'anaphModIv', 'anaphLife'] },
                         { title: 'Cardiac Arrest', keys: ['adrArrest', 'adrArrestMl', 'amiodarone', 'lignocaine', 'dccs'] },
-                        { title: 'Resuscitation / Fluids', keys: ['fluidBolus', 'dextrose10', 'sodiumBicarb'] },
+                        { title: 'Resuscitation / Fluids', keys: ['fluidBolus', 'dextrose10'] },
                         { title: 'Seizure', keys: ['seizure'] },
                         { title: 'Antiemetics', keys: ['ondansetron', 'dexamethasone', 'droperidol'] },
                         { title: 'Antibiotics', keys: ['cefazolin'] }
@@ -3785,11 +3778,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             } else if (key === 'lignocaine') {
                                 value = Math.min(parseFloat((w * 1).toFixed(1)), 100);
                             } else if (key === 'fluidBolus') {
-                                value = Math.round(w * 20);
+                                value = `${Math.round(w * 10)} – ${Math.round(w * 20)}`;
                             } else if (key === 'dextrose10') {
                                 value = Math.round(w * 2);
-                            } else if (key === 'sodiumBicarb') {
-                                value = Math.round(w * 1);
                             } else {
                                 value = data[key];
                             }
