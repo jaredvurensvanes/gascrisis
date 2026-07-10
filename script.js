@@ -3043,17 +3043,18 @@ const crisisData = {
             <div class="crisis-section">
                 <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
                     <span>GENERAL SURGERY / OBSTETRICS / TRAUMA</span>
-                    <a href="#teg-cardiac" class="primary-btn" style="font-size: 0.55em; line-height: 1; padding: 0.45rem 0.9rem; margin: 0; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO CARDIAC / VASCULAR SURGERY</a>
+                    <a href="#teg-cardiac" class="primary-btn" style="font-size: 0.55em; line-height: 1.1; padding: 0.45rem 0.9rem; margin: 0; display: inline-flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border: 1px solid currentColor; min-height: 2.15rem; border-radius: 999px;">GO TO CARDIAC / VASCULAR SURGERY</a>
                 </div>
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA / OBSTETRIC / ORTHOPAEDIC)? &rarr; <strong>TXA 1G IV</strong></li>
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA / OBSTETRIC / ORTHOPAEDIC) &rarr; <strong>TXA 1G IV</strong></li>
                     <li><strong>OR</strong> CLOT INSTABILITY
                         <ul>
-                            <li>CRT A10 &lt; 47MM (OR FLAT LINE CRT AT 5/60)
-                                <ul>
-                                    <li><strong>TXA 1G IV</strong></li>
+                            <li class="no-bullet" style="text-align: left; padding-left: 0; margin-left: 0;">
+                                CRT A10 &lt; 47MM / FLAT LINE CRT AT 5/60
+                                <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                                    <li style="text-align: left; padding-left: 0; margin-left: 0;"><strong>TXA 1G IV</strong></li>
                                 </ul>
                             </li>
                         </ul>
@@ -3062,9 +3063,9 @@ const crisisData = {
 
                 <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>CFF A10 &lt; 15MM?
-                        <ul>
-                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
+                    <li>CFF A10 &lt; 15MM / FLAT LINE @ 5/60
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3072,8 +3073,8 @@ const crisisData = {
                 <h3>CHECK PLATELETS</h3>
                 <ul>
                     <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM
-                        <ul>
-                            <li><strong>PLATELETS</strong>
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>PLATELETS</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3089,7 +3090,7 @@ const crisisData = {
 
                 <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
                 <ul>
-                    <li>IS CRT (LY30) &gt; 2.2%?
+                    <li>IS CRT (LY30) &gt; 2.2%
                         <ul>
                             <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
@@ -3114,7 +3115,7 @@ const crisisData = {
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
                 </ul>
 
                 <h3>HEPARIN EFFECT PRESENT?</h3>
@@ -3127,16 +3128,16 @@ const crisisData = {
                     <li>CKR AND CKH-R REMAINS @ 10/60
                         <ul>
                             <li>PROLONGATION REMAINS &rarr; POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
-                            <li>PROLONGATION REMAINS &rarr; ?COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                            <li>PROLONGATION REMAINS &rarr; POSSIBLE COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>CFF A10 &lt; 15MM?
-                        <ul>
-                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF CFF A10 &lt; 10)</li>
+                    <li>CFF A10 &lt; 15MM / FLAT LINE @ 5/60
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF CFF A10 &lt; 10)</li>
                         </ul>
                     </li>
                 </ul>
@@ -3144,8 +3145,8 @@ const crisisData = {
                 <h3>CHECK PLATELETS</h3>
                 <ul>
                     <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM OR ABNORMAL MULTIPLATE / PLATELET MAPPING
-                        <ul>
-                            <li><strong>PLATELETS</strong>
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>PLATELETS</strong>
                             </li>
                         </ul>
                     </li>
@@ -3162,7 +3163,7 @@ const crisisData = {
 
                 <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
                 <ul>
-                    <li>IS CRT (LY30) &gt; 2.2%?
+                    <li>IS CRT (LY30) &gt; 2.2%
                         <ul>
                             <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
@@ -3242,7 +3243,7 @@ const crisisData = {
             <div class="crisis-section">
                 <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
                     <span>GENERAL SURGERY / OBSTETRICS / TRAUMA</span>
-                    <a href="#rotem-cardiac" class="primary-btn" style="font-size: 0.55em; line-height: 1; padding: 0.45rem 0.9rem; margin: 0; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO CARDIAC / VASCULAR SURGERY</a>
+                    <a href="#rotem-cardiac" class="primary-btn" style="font-size: 0.55em; line-height: 1.1; padding: 0.45rem 0.9rem; margin: 0; display: inline-flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; border: 1px solid currentColor; min-height: 2.15rem; border-radius: 999px;">GO TO CARDIAC / VASCULAR SURGERY</a>
                 </div>
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
@@ -3250,9 +3251,10 @@ const crisisData = {
                     <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA, OBSTETRIC, ORTHOPAEDIC) &rarr; <strong>TXA 1G IV</strong></li>
                     <li><strong>OR</strong> CLOT INSTABILITY
                         <ul>
-                            <li>EXTEM A5 &lt; 35MM (OR FLAT LINE FIBTEM AT 5/60)
-                                <ul>
-                                    <li><strong>TXA 1G IV</strong></li>
+                            <li class="no-bullet" style="text-align: left; padding-left: 0; margin-left: 0;">
+                                EXTEM A5 &lt; 35MM / FLAT LINE FIBTEM AT 5/60
+                                <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                                    <li style="text-align: left; padding-left: 0; margin-left: 0;"><strong>TXA 1G IV</strong></li>
                                 </ul>
                             </li>
                         </ul>
@@ -3261,18 +3263,18 @@ const crisisData = {
 
                 <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>FIBTEM A5 &lt; 12MM? (OR FLAT LINE @ 5/60)
-                        <ul>
-                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
+                    <li>FIBTEM A5 &lt; 12MM / FLAT LINE @ 5/60
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>CHECK PLATELETS</h3>
                 <ul>
-                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM? OR ABNORMAL MULTIPLATE / PLATELET MAPPING
-                        <ul>
-                            <li><strong>PLATELETS</strong></li>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM OR ABNORMAL MULTIPLATE / PLATELET MAPPING
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>PLATELETS</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3288,7 +3290,7 @@ const crisisData = {
 
                 <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
                 <ul>
-                    <li>FIBTEM ML &ge; 10%?
+                    <li>FIBTEM ML &ge; 10%
                         <ul>
                             <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
@@ -3330,28 +3332,28 @@ const crisisData = {
                             <li>HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
                         </ul>
                     </li>
-                    <li>INTEM & HEPTEM CT BOTH &gt; 205 SEC?
+                    <li>INTEM & HEPTEM CT BOTH &gt; 205 SEC
                         <ul>
                             <li>POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
-                            <li>PROLONGATION REMAINS >10/60 &rarr; ?COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                            <li>PROLONGATION REMAINS >10/60 &rarr; POSSIBLE COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>FIBTEM A5 &lt; 12MM? (INCLUDING FLAT LINE AT 5 MINUTES)
-                        <ul>
-                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF FIBTEM A5 &lt; 6)</li>
+                    <li>FIBTEM A5 &lt; 12MM (INCLUDING FLAT LINE AT 5 MINUTES)
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF FIBTEM A5 &lt; 6)</li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>CHECK PLATELETS</h3>
                 <ul>
-                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM?
-                        <ul>
-                            <li><strong>PLATELETS</strong>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>PLATELETS</strong>
                         </ul>
                     </li>
                 </ul>
@@ -3367,7 +3369,7 @@ const crisisData = {
 
                 <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
                 <ul>
-                    <li>FIBTEM ML &ge; 10%?
+                    <li>FIBTEM ML &ge; 10%
                         <ul>
                             <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>

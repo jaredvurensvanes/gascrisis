@@ -1077,6 +1077,11 @@ body {
     font-weight: bold;
 }
 
+.crisis-section li.no-bullet::before,
+.crisis-section li[style*="list-style: none;"]::before {
+    content: none;
+}
+
 .crisis-section.warning-box {
     border-left-color: var(--color-d);
     background-color: rgba(234, 179, 8, 0.05);
