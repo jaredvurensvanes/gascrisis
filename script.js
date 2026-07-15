@@ -1805,7 +1805,7 @@ const crisisData = {
         `
     },
     'd-stroke': {
-        title: 'ISCHAEMIC STROKE',
+        title: 'ISCHAEMIC STROKE / ECR',
         content: `
             <div class="supplementary-box" style="top: 50%; transform: translateY(-50%);">
                 <h3>MX OPTIONS</h3>
@@ -1820,7 +1820,7 @@ const crisisData = {
                 <ul>
                     <li>STABILISE ABCS</li>
                     <li>DISCUSS TREATMENT PLAN WITH TREATING TEAM</li>
-                    <li>CONTACT THEATRE / IR</li>
+                    <li>PLANNED ECR &rarr; CONTACT THEATRE / IR </li>
                 </ul>
 
                 <h3 style="margin-top: 1.5rem; color: var(--color-e);">MANAGEMENT</h3>
@@ -3622,11 +3622,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 const drugsLabels = {
+                    propofolBolus: { label: 'Propofol Bolus 1-3mg/kg', unit: 'mg' },
                     atropine: { label: 'Atropine 20mcg/kg', unit: 'mcg' },
                     suxIm: { label: 'Sux IM 4mg/kg', unit: 'mg' },
                     suxIv: { label: 'Sux IV 2mg/kg', unit: 'mg' },
                     adrArrest: { label: 'Adrenaline - Arrest IV/IO - 10mcg/kg', unit: 'mcg' },
-                    adrArrestMl: { label: 'Adrenaline - Arrest IV/IO - 1:10,000', unit: '' },
+                    adrArrest1000: { label: '<span style="padding-left: 1.5rem; display: inline-block; font-size: 0.9em; font-weight: normal; color: #94a3b8; opacity: 0.85;">Volume of 1:1,000 (1mg/mL)</span>', unit: 'ml' },
+                    adrArrest10000: { label: '<span style="padding-left: 1.5rem; display: inline-block; font-size: 0.9em; font-weight: normal; color: #94a3b8; opacity: 0.85;">Volume of 1:10,000 (100mcg/mL)</span>', unit: 'ml' },
                     anaphModIm: { label: 'Adrenaline - Anaphylaxis - Moderate IM 10mcg/kg', unit: 'mcg' },
                     anaphModIv: { label: 'Adrenaline - Anaphylaxis - Moderate IV 2mcg/kg', unit: 'mcg' },
                     anaphLife: { label: 'Adrenaline - Anaphylaxis - Life-threatening IV 4-10mcg/kg', unit: 'mcg' },
@@ -3709,11 +3711,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const drugGroups = [
-                        { title: 'Laryngospasm', keys: ['suxIm', 'suxIv'] },
+                        { title: 'Laryngospasm', keys: ['propofolBolus', 'suxIm', 'suxIv'] },
                         { title: 'Bradycardia', keys: ['atropine'] },
                         { title: 'Bronchospasm', keys: ['salbMdi', 'ipraMdi', 'salbIv', 'adrIv', 'dexaBronch', 'mgso4', 'aminophylline'] },
                         { title: 'Anaphylaxis', keys: ['anaphModIm', 'anaphModIv', 'anaphLife'] },
-                        { title: 'Cardiac Arrest', keys: ['adrArrest', 'adrArrestMl', 'amiodarone', 'lignocaine', 'dccs'] },
+                        { title: 'Cardiac Arrest', keys: ['adrArrest', 'adrArrest1000', 'adrArrest10000', 'amiodarone', 'lignocaine', 'dccs'] },
                         { title: 'Resuscitation / Fluids', keys: ['fluidBolus', 'dextrose10'] },
                         { title: 'Seizure', keys: ['seizure'] },
                         { title: 'Antiemetics', keys: ['ondansetron', 'dexamethasone', 'droperidol'] },
@@ -3737,7 +3739,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                             const tr = document.createElement('tr');
                             let value;
-                            if (key === 'atropine') {
+                            if (key === 'propofolBolus') {
+                                value = Math.round(w) + ' – ' + Math.round(w * 3);
+                            } else if (key === 'atropine') {
                                 value = Math.min(Math.round(w * 20), 600);
                             } else if (key === 'suxIm') {
                                 value = Math.round(w * 4);
@@ -3745,10 +3749,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 value = Math.round(w * 2);
                             } else if (key === 'adrArrest') {
                                 value = Math.round(w * 10);
-                            } else if (key === 'adrArrestMl') {
-                                const mlVal = parseFloat((w * 0.1).toFixed(2));
-                                const mcgVal = Math.round(w * 10);
-                                value = `${mlVal} ml (${mcgVal} mcg)`;
+                            } else if (key === 'adrArrest1000') {
+                                value = parseFloat((w * 0.01).toFixed(3));
+                            } else if (key === 'adrArrest10000') {
+                                value = parseFloat((w * 0.1).toFixed(2));
                             } else if (key === 'anaphModIm') {
                                 value = data[key];
                             } else if (key === 'anaphModIv') {
@@ -3803,7 +3807,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
 
                             const unitStr = item.unit ? ' ' + item.unit : '';
-                            tr.innerHTML = `<td>${item.label}</td><td>${value}${unitStr}</td>`;
+                            if (key === 'adrArrest1000' || key === 'adrArrest10000') {
+                                tr.innerHTML = `<td>${item.label}</td><td style="font-size: 0.9em; font-weight: normal; color: rgba(248, 250, 252, 0.8) !important;">${value}${unitStr}</td>`;
+                            } else {
+                                tr.innerHTML = `<td>${item.label}</td><td>${value}${unitStr}</td>`;
+                            }
                             drugsBody.appendChild(tr);
                         });
                     });
