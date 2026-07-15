@@ -12,3 +12,11 @@
 /installation_id
 /mcp_config.json
 /*.pb
+
+# Local/editor artifacts
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/
+

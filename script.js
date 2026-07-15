@@ -2181,8 +2181,34 @@ const crisisData = {
     },
 
     'ab-fire': {
-        title: 'AIRWAY FIRE',
+        title: 'AIRWAY FIRE <br><a href="crisis.html?id=e-fire" class="primary-btn" style="font-size: 0.45em; line-height: 1.2; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO <span class="mobile-br"><br></span>FIRE IN THEATRE</a>',
         content: `
+            <div class="supplementary-box" style="top: 50%; transform: translateY(-50%);">
+                <h3>PREVENT / PREPARE</h3>
+                <ul>
+                    <li>SALINE-FILLED CUFFS TINTED WITH METHYLENE BLUE (ALERT DYE)</li>
+                    <li>FiO2 &le; 30% OR LOWEST TOLERATED</li>
+                    <li>AVOID NITROUS OXIDE (N2O)</li>
+                    <li>USE LASER-GUARDED / RESISTANT ETT</li>
+                    <li>MOISTEN SPONGES / GAUZE NEAR LASER FIELD</li>
+                    <li>KEEP SALINE ON SURGICAL FIELD</li>
+                </ul>
+            </div>
+            <div class="supplementary-box-left" style="top: 50%; transform: translateY(-50%);">
+                <h3>THE FIRE TRIAD</h3>
+                <strong>FUEL</strong>
+                <ul style="margin-bottom: 0.5rem;">
+                    <li>ETT (PVC, SILICONE), DRAPES, SPONGES, GAUZE, HAIR, ALCOHOL-BASED PREPS</li>
+                </ul>
+                <strong>OXIDISER</strong>
+                <ul style="margin-bottom: 0.5rem;">
+                    <li>OXYGEN, NITROUS OXIDE</li>
+                </ul>
+                <strong>IGNITION</strong>
+                <ul>
+                    <li>LASERS, DIATHERMY / CAUTERY, FIBREOPTIC LIGHT CORDS</li>
+                </ul>
+            </div>
             <div class="crisis-section alert-box">
                 <h3 style="margin-top: 0; color: var(--color-e);">IMMEDIATE ACTIONS</h3>
                 <ul>
@@ -2194,6 +2220,7 @@ const crisisData = {
                 <h3 style="margin-top: 1.5rem; color: var(--color-e);">FIRE PERSISTS</h3>
                 <ul>
                     <li>EXTINGUISH WITH CO2 EXTINGUISHER</li>
+                    <li>IF UNCONTROLLED ACTIVATE FIRE ALARM + MX AS PER <a href="crisis.html?id=e-fire" style="text-decoration: underline;">OT FIRE</a></li>
                 </ul>
                 <h3 style="margin-top: 1.5rem; color: var(--color-e);">FIRE OUT</h3>
                 <ul>
@@ -2207,7 +2234,7 @@ const crisisData = {
         `
     },
     'e-fire': {
-        title: 'FIRE IN OPERATING THEATRE',
+        title: 'FIRE IN OPERATING THEATRE <br><a href="crisis.html?id=ab-fire" class="primary-btn" style="font-size: 0.45em; line-height: 1.2; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO <span class="mobile-br"><br></span>AIRWAY FIRE</a>',
         content: `
             <div class="crisis-section alert-box">
                 <h3 style="margin-top: 0; color: var(--color-e);">IMMEDIATE ACTIONS</h3>
@@ -2222,7 +2249,7 @@ const crisisData = {
                     <li>IF UNCONTROLLABLE ACTIVATE FIRE ALARM</li>
                     <li>EVACUATE PATIENT</li>
                     <li>CLOSE OT DOOR</li>
-                    <li>SUSPEND GAS SUPPLY TO OT
+                    <li>SUSPEND GAS SUPPLY TO OT</li>
                 </ul>
                 <h3 style="margin-top: 1.5rem; color: var(--color-e);">FIRE OUT</h3>
                 <ul>
@@ -3115,20 +3142,20 @@ const crisisData = {
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (EG. CPB / AORTIC DISSECTION) &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
                 </ul>
 
                 <h3>HEPARIN EFFECT PRESENT?</h3>
                 <ul>
-                    <li>CXR / CKH-R RATIO OR DIFFERENCE PRESENT
+                    <li>CKR/CKH-R (R-RATIO) >1.25 OR ANY DIFFERENCE PRESENT
                         <ul>
                             <li>HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
                         </ul>
                     </li>
-                    <li>CKR AND CKH-R REMAINS @ 10/60
+                    <li>CKR AND CKH-R BOTH PROLONGED
                         <ul>
-                            <li>PROLONGATION REMAINS &rarr; POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
-                            <li>PROLONGATION REMAINS &rarr; POSSIBLE COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                            <li>POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
+                            <li>PROLONGATION REMAINS @ 10/60 &rarr; POSSIBLE COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
                         </ul>
                     </li>
                 </ul>
@@ -3137,7 +3164,7 @@ const crisisData = {
                 <ul>
                     <li>CFF A10 &lt; 15MM / FLAT LINE @ 5/60
                         <ul style="padding-left: 0; margin-left: 0; list-style: none;">
-                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF CFF A10 &lt; 10)</li>
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3322,12 +3349,12 @@ const crisisData = {
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA, OBSTETRIC, ORTHOPAEDIC) &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (EG. CPB / AORTIC DISSECTION) &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
                 </ul>
 
                 <h3>HEPARIN EFFECT PRESENT?</h3>
                 <ul>
-                    <li>INTEM CT / HEPTEM CT RATIO &gt; 1.25
+                    <li>INTEM CT / HEPTEM CT RATIO &gt; 1.25 OR ANY DIFFERENCE PRESENT
                         <ul>
                             <li>HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
                         </ul>
@@ -3335,16 +3362,16 @@ const crisisData = {
                     <li>INTEM & HEPTEM CT BOTH &gt; 205 SEC
                         <ul>
                             <li>POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
-                            <li>PROLONGATION REMAINS >10/60 &rarr; POSSIBLE COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                            <li>PROLONGATION REMAINS @ 10/60 &rarr; POSSIBLE COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>FIBTEM A5 &lt; 12MM (INCLUDING FLAT LINE AT 5 MINUTES)
+                    <li>FIBTEM A5 &lt; 12MM / FLAT LINE @ 5/60
                         <ul style="padding-left: 0; margin-left: 0; list-style: none;">
-                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF FIBTEM A5 &lt; 6)</li>
+                            <li style="text-align: left; padding-left: 0; margin-left: 0; list-style: none;">&rarr; <strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3630,28 +3657,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     // and user has now typed a new age without a weight
                     if (!weightInput.value && !isNaN(a)) {
                         if (a < 1) {
-                            // < 1 year: (Age in months * 0.5) + 4
                             w = ((a * 12) * 0.5) + 4;
                         } else if (a <= 5) {
-                            // 1 - 5 years: (Age in years * 2) + 8
                             w = (a * 2) + 8;
                         } else {
-                            // 6 - 12 years: (Age in years * 3) + 7
                             w = (a * 3) + 7;
                         }
-                        // Update weight field to show calculated value
                         weightInput.value = w.toFixed(1);
                     }
 
                     if (!w || w <= 0) return;
-
-                    // Clear the age input if user just entered weight so we don't recalculate if they change weight later
-                    if (weightInput.value && !isNaN(w) && isNaN(a) && a !== 0) {
-                        // Do nothing, just use weight
-                    } else if (weightInput.value && !isNaN(w) && !isNaN(a)) {
-                        // User provided both. If they click calculate, we should use weight as source of truth.
-                        // Or if they wanted to re-calculate from age, they'd clear weight.
-                    }
 
                     const data = getClinicalParams(w);
                     
