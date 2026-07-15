@@ -469,10 +469,10 @@ const crisisData = {
                     <li>ABCDE CHECK + CALL FOR HELP (SENIOR ENT + ANAESTHETICS) + ADVISE THEATRE</li>
                     <li>POSITION PT 45 DEGREES + APPLY 15L/MIN O2</li>
                     <li>RETRIEVE BEDSIDE HAEMATOMA KIT + SUCTION + GAUZE</li>
-                    <li style="list-style-type: none; margin-left: 0; padding-left: 0;">
-                        <div style="background-color: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 0.5rem; padding: 1rem; margin: 0.5rem 0 1rem 0;">
-                            <div style="font-weight: 900; color: rgb(56, 189, 248); font-size: 1.1rem; margin-bottom: 0.4rem;">SIGNS OF AIRWAY COMPROMISE</div>
-                            <div style="margin-bottom: 0.4rem;">(STRIDOR, HYPOXIA, DYSPNOEA, EVOLVING HAEMATOMA / BLEEDING) &rarr; EVACUATE HAEMATOMA</div>
+                    <li style="list-style-type: none; margin-left: 0; padding-left: 0; margin-top: 1.5rem;">
+                        <div style="margin: 1.5rem 0 1rem 0;">
+                            <div style="font-weight: 900; color: rgb(34, 197, 94); font-size: 1.15rem; line-height: 1.3; margin-bottom: 0.4rem; border-bottom: 2px solid rgba(239, 68, 68, 0.4); padding-bottom: 0.5rem; text-transform: uppercase;">SIGNS OF AIRWAY COMPROMISE</div>
+                            <div style="margin-bottom: 0.4rem;">(STRIDOR, HYPOXIA, DYSPNOEA, EVOLVING HAEMATOMA / BLEEDING)<br>&rarr; <strong>EVACUATE HAEMATOMA</strong></div>
                             <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
                                 <li>1) TRANSVERSE SUBCUTICULAR LAYER</li>
                                 <li>2) TRANSVERSE SUBCUTANEOUS LAYER</li>
@@ -480,13 +480,16 @@ const crisisData = {
                             </ul>
                         </div>
                     </li>
-                    <li>IF AIRWAY COMPROMISE PERSISTS POST HAEMATOMA EVACUATION &rarr; CONVENTIONAL RSI FROM ABOVE</li>
-                    <li>UNSUCCESSFUL &rarr; PROCEED TO FONA / <a href="crisis.html?id=ab-CICO" class="cico-btn">CICO</a></li>
+                    <li style="list-style-type: none; padding-left: 0; margin-top: 1.5rem;">
+                        <div style="font-weight: 900; color: rgb(34, 197, 94); font-size: 1.15rem; line-height: 1.3; border-bottom: 2px solid rgba(239, 68, 68, 0.4); padding-bottom: 0.5rem; text-transform: uppercase;">AIRWAY COMPROMISE PERSISTS</div>
+                        <div style="margin-top: 0.5rem;">PREPARE TO INTUBATE</div>
+                        <div style="margin-top: 0.25rem;">ANTICIPATE DIFFICULTY - IS ATI APPROPRIATE?</div>
+                    </li>
                 </ul>
 
-                <h3>PAUSE AND PLAN</h3>
+                <h3>AIRWAY COMPROMISE RESOLVED</h3>
                 <ul>
-                    <li>AIRWAY COMPROMISE RESOLVED &rarr; ?RETURN TO OT</li>
+                    <li>PAUSE AND PLAN - PREPARE FOR RETURN TO OT</li>
                 </ul>
             </div>
         `
